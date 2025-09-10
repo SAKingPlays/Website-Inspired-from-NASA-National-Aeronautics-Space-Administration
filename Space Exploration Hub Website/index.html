@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <meta name="description" content="Explore NASA's missions, galleries, and latest discoveries in space exploration." />
+  <meta name="keywords" content="NASA, space exploration, missions, astronomy, space news" />
+  <meta name="author" content="Space Exploration Hub" />
+  <title>Space Exploration Hub - NASA Clone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <img src="images/logo.png" class="logo-img" alt="Space Exploration Hub Logo" />
+        <span class="site-title">Space Exploration Hub</span>
+      </div>
+      <nav class="navbar-links">
+        <a href="#home">Home</a>
+        <a href="#missions">Missions</a>
+        <a href="#galleries">Galleries</a>
+        <a href="#news">News</a>
+        <a href="#about">About</a>
+        <a href="#events">Events</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="navbar-search">
+        <input type="text" id="navbar-search-input" placeholder="Search missions, news..." />
+        <button id="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+      </div>
+      <div class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <img src="images/heroearth.png" class="hero-bg" alt="Earth from space hero image" />
+      <div class="hero-overlay">
+        <div class="hero-text">
+          <h1>Explore the Cosmos</h1>
+          <p>Discover celestial wonders, missions, and cosmic events.</p>
+          <button onclick="jumpToMissions()">Explore Missions</button>
+          <button class="secondary-btn" onclick="scrollToNews()">Latest News</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Missions Section -->
+    <section id="missions" class="section missions-section">
+      <div class="section-header">
+        <h2>Latest Missions</h2>
+        <select id="mission-filter" class="custom-select">
+          <option value="all">All Missions</option>
+          <option value="moon">Moon</option>
+          <option value="mars">Mars</option>
+          <option value="telescope">Telescopes</option>
+          <option value="iss">ISS</option>
+          <option value="rover">Rovers</option>
+        </select>
+      </div>
+      <div id="mission-grid" class="card-grid">
+        <!-- Mission Cards -->
+        <div class="card" data-category="moon">
+          <img src="images/pausat1.webp" alt="PAUSAT-1 Satellite">
+          <div class="card-content">
+            <h3>PAUSAT-1</h3>
+            <p>Earth observation satellite, enhances disaster management, urban planning, agriculture, launched January 2025, boosts Pakistan’s remote sensing.</p>
+            <button class="learn-more-btn">Learn More</button>
+          </div>
+        </div>
+        <div class="card" data-category="mars">
+          <img src="images/prsceo1.jpg" alt="PRSC-EO1 Satellite Launch">
+          <div class="card-content">
+            <h3>PRSC-EO1</h3>
+            <p>Pakistan’s first fully indigenous Earth observation satellite, launched from China’s Jiuquan Satellite Launch Centre using a Kuaizhou-1A rocket.</p>
+            <button class="learn-more-btn">Learn More</button>
+          </div>
+        </div>
+        <div class="card" data-category="telescope">
+          <img src="images/jwst.webp" alt="James Webb Space Telescope">
+          <div class="card-content">
+            <h3>James Webb Telescope</h3>
+            <p>Infrared telescope, observes distant galaxies, stars, exoplanets, revealing universe’s origins.</p>
+            <button class="learn-more-btn">Learn More</button>
+          </div>
+        </div>
+        <div class="card" data-category="iss">
+          <img src="images/internationalspacestation.jpg" alt="International Space Station">
+          <div class="card-content">
+            <h3>International Space Station</h3>
+            <p>Orbiting laboratory, hosts multinational research, advances space exploration, human spaceflight tech.</p>
+            <button class="learn-more-btn">Learn More</button>
+          </div>
+        </div>
+        <div class="card" data-category="rover">
+          <img src="images/curiosityrover.jpg" alt="Curiosity Rover on Mars">
+          <div class="card-content">
+            <h3>Curiosity Rover</h3>
+            <p>Mars rover, studies Martian geology, climate, assesses past habitability for microbial life.</p>
+            <button class="learn-more-btn">Learn More</button>
+          </div>
+        </div>
+        <div class="card" data-category="moon">
+          <img src="images/lunarsgateway.jpg" alt="Lunar Gateway Station">
+          <div class="card-content">
+            <h3>Lunar Gateway</h3>
+            <p>Planned lunar orbit station, supports Artemis missions, enables sustained human lunar presence.</p>
+            <button class="learn-more-btn">Learn More</button>
+          </div>
+        </div>
+        <div class="card" data-category="moon">
+          <img src="images/artemis2.jpg" alt="Artemis II Mission">
+          <div class="card-content">
+            <h3>Artemis II</h3>
+            <p>First crewed Artemis mission, lunar flyby, tests SLS/Orion with four astronauts, 2026.</p>
+            <button class="learn-more-btn">Learn More</button>
+          </div>
+        </div>
+        <div class="card" data-category="moon">
+          <img src="images/IMAP.jpg" alt="IMAP Probe">
+          <div class="card-content">
+            <h3>Interstellar Mapping and Acceleration Probe (IMAP) and Carruthers Geocorona Observatory</h3>
+            <p>Maps heliosphere, studies space weather, cosmic rays, launches September 2025 with Carruthers Observatory.</p>
+            <button class="learn-more-btn">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galleries Section -->
+    <section id="galleries" class="section">
+      <h2 class="section-title">Space Galleries</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/moongallery.jpg" alt="Moon Gallery Images">
+          <div class="gallery-overlay">
+            <h3>Moon Gallery</h3>
+            <p>Explore lunar landscapes</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/marsgallery.jpg" alt="Mars Gallery Images">
+          <div class="gallery-overlay">
+            <h3>Mars Gallery</h3>
+            <p>Red planet adventures</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/deepspacegallery.jpg" alt="Deep Space Gallery Images">
+          <div class="gallery-overlay">
+            <h3>Deep Space</h3>
+            <p>Cosmic wonders</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/earthfromspace.jpg" alt="Earth from Space Images">
+          <div class="gallery-overlay">
+            <h3>Earth from Space</h3>
+            <p>Planetary views</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/planets.webp" alt="Planets Gallery Images">
+          <div class="gallery-overlay">
+            <h3>Planets</h3>
+            <p>Solar system tour</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/astrophysics.jpg" alt="Astrophysics Gallery Images">
+          <div class="gallery-overlay">
+            <h3>Astrophysics</h3>
+            <p>Mysteries unveiled</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/suparcospacegallery.jpg" alt="SUPARCO Space Gallery">
+          <div class="gallery-overlay">
+            <h3>SUPARCO Space Gallery</h3>
+            <p>Pakistan's space achievements</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/istspaceexhibition.jpg" alt="IST Space Exhibition">
+          <div class="gallery-overlay">
+            <h3>(IST) Space Exhibition, Islamabad</h3>
+            <p>Pakistan’s lunar mission ICUBE-Q</p>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-load-more">
+        <button onclick="loadMoreGalleries()">Load More Images</button>
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="section news-section">
+      <h2 class="section-title">Latest News</h2>
+      <div class="news-grid">
+        <div class="news-card">
+          <img src="images/latestnews1.jpg" alt="New Exoplanet Discovery">
+          <div class="news-content">
+            <h3>New Exoplanet Discovered</h3>
+            <p class="news-date">15 August 2025</p>
+            <p>Distant, potentially habitable exoplanet found orbiting red dwarf, igniting hope for extraterrestrial life in astronomers.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="images/latestnews2.jpg" alt="Perseverance Rover Findings">
+          <div class="news-content">
+            <h3>Perseverance Finds Organic Molecules</h3>
+            <p class="news-date">10 September 2025</p>
+            <p>Mars rover uncovers complex organic compounds, suggesting past life and boosting debate on Martian habitability.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="images/latestnews3.jpg" alt="Artemis II Crew Announcement">
+          <div class="news-content">
+            <h3>Artemis II Crew Announced</h3>
+            <p class="news-date">3 September 2025</p>
+            <p>NASA selects diverse crew for lunar orbit mission, marking historic step toward human Moon exploration.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="images/latestnews4.jpg" alt="ISS 25 Years Milestone">
+          <div class="news-content">
+            <h3>ISS Celebrates 25 Years</h3>
+            <p class="news-date">20 November 2023</p>
+            <p>International Space Station hits 25-year milestone, advancing science, global collaboration, and humanity’s continuous presence in space.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="images/latestnews5.webp" alt="New Space Telescope Launch">
+          <div class="news-content">
+            <h3>New Space Telescope Launches</h3>
+            <p class="news-date">1 September 2025</p>
+            <p>Cutting-edge telescope launches, promising sharper cosmic images and deeper insights into universe’s origins and mysteries.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="images/latestnews6.jpg" alt="Lunar Samples Analysis">
+          <div class="news-content">
+            <h3>Lunar Samples Analyzed</h3>
+            <p class="news-date">10 August 2025</p>
+            <p>Apollo lunar samples reveal fresh geological clues, illuminating Moon’s formation and early solar system history.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="images/latestnews7.jpg" alt="Aurora Borealis Study">
+          <div class="news-content">
+            <h3>Aurora Borealis Study</h3>
+            <p class="news-date">15 March 2024</p>
+            <p>Researchers probe auroras, decoding solar wind effects on Earth’s magnetic field and atmospheric interactions.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="images/latestnews8.jpg" alt="Saturn's Rings Origin">
+          <div class="news-content">
+            <h3>Saturn's Rings Mystery Solved</h3>
+            <p class="news-date">5 September 2025</p>
+            <p>Scientists confirm Saturn’s rings formed from shattered moon, solving decades-long puzzle about their origin.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+      </div>
+      <div class="news-load-more">
+        <button onclick="loadMoreNews()">Load More News</button>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section">
+      <h2 class="section-title">Upcoming Events</h2>
+      <div class="event-grid">
+        <div class="event-card">
+          <img src="images/upcoming1.jpg" alt="World Space Week Event">
+          <div class="event-content">
+            <h3>World Space Week</h3>
+            <p class="event-date">October 4-10, 2025</p>
+            <p>Global celebration of space with lectures, stargazing, and workshops under "Living in Space" theme.</p>
+            <button class="rsvp-btn">Register</button>
+          </div>
+        </div>
+        <div class="event-card">
+          <img src="images/upcoming2.jpg" alt="Orionid Meteor Shower">
+          <div class="event-content">
+            <h3>Orionid Meteor Shower Peak</h3>
+            <p class="event-date">October 21, 2025</p>
+            <p>Halley’s Comet debris sparks 20 meteors/hour, best viewed after midnight in dark skies.</p>
+            <button class="rsvp-btn">Observe</button>
+          </div>
+        </div>
+        <div class="event-card">
+          <img src="images/upcoming3.png" alt="IMAP Launch Event">
+          <div class="event-content">
+            <h3>Interstellar Mapping and Acceleration Probe (IMAP) Launch</h3>
+            <p class="event-date">September 23, 2025</p>
+            <p>NASA’s heliosphere mapping mission launches on SpaceX Falcon 9 from Kennedy Space Center.</p>
+            <button class="rsvp-btn">Attend</button>
+          </div>
+        </div>
+        <div class="event-card">
+          <img src="images/upcoming4.jpg" alt="Griffin Mission 1 Launch">
+          <div class="event-content">
+            <h3>Griffin Mission 1 Lunar Lander Launch</h3>
+            <p class="event-date">Fall 2025</p>
+            <p>Astrobotic’s lunar lander delivers NASA payloads via Blue Origin rocket for Artemis program.</p>
+            <button class="rsvp-btn">Attend</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education-section">
+      <h2 class="section-title">Education & Outreach</h2>
+      <div class="education-grid">
+        <div class="education-card">
+          <i class="fas fa-rocket"></i>
+          <h3>STEM Programs</h3>
+          <p>Engage in hands-on STEM activities inspired by real NASA missions.</p>
+          <a href="#">Explore Programs</a>
+        </div>
+        <div class="education-card">
+          <i class="fas fa-globe"></i>
+          <h3>Virtual Learning</h3>
+          <p>Access free online courses on astronomy, engineering, and space science.</p>
+          <a href="#">Start Learning</a>
+        </div>
+        <div class="education-card">
+          <i class="fas fa-users"></i>
+          <h3>Student Contests</h3>
+          <p>Participate in design challenges and win scholarships for space innovation.</p>
+          <a href="#">Enter Contest</a>
+        </div>
+        <div class="education-card">
+          <i class="fas fa-book"></i>
+          <h3>Resources Library</h3>
+          <p>Download guides, videos, and lesson plans for educators and students.</p>
+          <a href="#">Browse Library</a>
+        </div>
+        <div class="education-card">
+          <i class="fas fa-video"></i>
+          <h3>Educator Workshops</h3>
+          <p>Professional development for teachers to integrate space into curriculum.</p>
+          <a href="#">Sign Up</a>
+        </div>
+        <div class="education-card">
+          <i class="fas fa-gamepad"></i>
+          <h3>Interactive Simulations</h3>
+          <p>Simulate rocket launches and planetary explorations in 3D.</p>
+          <a href="#">Play Now</a>
+        </div>
+        <div class="education-card">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Space Camps</h3>
+          <p>Immersive summer programs for young space enthusiasts.</p>
+          <a href="#">Join Camp</a>
+        </div>
+        <div class="education-card">
+          <i class="fas fa-binoculars"></i>
+          <h3>Astronomy Clubs</h3>
+          <p>Join local groups to observe stars and learn about the cosmos.</p>
+          <a href="#">Find a Club</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <h2 class="section-title">About Space Exploration Hub</h2>
+      <p class="about-description">The Space Exploration Hub, inspired by NASA, advances science, technology, and space exploration. We inspire future explorers through education and innovation.</p>
+      <img src="images/nasateam.jpg" alt="Space Exploration Hub Team" class="about-img" />
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>50+</h3>
+          <p>Missions Active</p>
+        </div>
+        <div class="stat-item">
+          <h3>1M+</h3>
+          <p>Users Reached</p>
+        </div>
+        <div class="stat-item">
+          <h3>100+</h3>
+          <p>Partners Worldwide</p>
+        </div>
+        <div class="stat-item">
+          <h3>2025</h3>
+          <p>Founded</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-container">
+        <form class="contact-form">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="Your Name" required />
+          <label for="email">Your Email</label>
+          <input type="email" id="email" placeholder="Your Email" required />
+          <label for="message">Your Message</label>
+          <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <p><i class="fas fa-envelope"></i> info@spacehub.nasa</p>
+          <p><i class="fas fa-phone"></i> +1 (800) SPACE-EX</p>
+          <p><i class="fas fa-map-marker-alt"></i> 300 E St SW, Washington, DC</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Space Exploration Hub. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Follow Us</a>
+      <a href="#">Careers</a>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/36270fd98b.js" crossorigin="anonymous"></script>
+</body>
+</html>
